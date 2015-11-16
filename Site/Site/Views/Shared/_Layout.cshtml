@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - ToViKo.in.ua</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -17,11 +17,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("ToViKo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Areas <span class="caret" /></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Coding", "About", "Home")</li>
+                            <li>@Html.ActionLink("English", "About", "Home")</li>
+                            <li>@Html.ActionLink("Kids korner", "About", "Home")</li>
+                        </ul>
+                    </li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
@@ -29,11 +37,50 @@
             </div>
         </div>
     </div>
+    <div id="mainCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#mainCarousel" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="~/Images/Main/Carusel/coding.jpg" alt="Team description" />
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Team desc:</h1>
+                        <p class="lead">
+                            "Вот из кого состоит типичная команда."
+                        </p>
+                        <a class="btn btn-large btn-primary" href="#">Подробнее...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="~/Images/Main/Carusel/team.jpg" alt="Так должно быть" />
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Как нужно работать</h1>
+                        <p class="lead">
+                            What you need to reach your destination
+                        </p>
+                        <a class="btn btn-large btn-primary" href="#">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#mainCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        </a>
+        <a class="right carousel-control" href="#mainCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </a>
+
+    </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - ToViKo.in.ua</p>
         </footer>
     </div>
 
